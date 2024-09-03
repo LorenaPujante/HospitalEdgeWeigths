@@ -28,9 +28,9 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 - [1.2. Bed →<sup>(opposite)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#12-bed-opposite-bed)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.4. Room →<sup>(nextTo)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#14-room-nextto-room)
-- 
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.5. Room →<sup>(opposite)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#15-room-opposite-room)
+- [1.6. Room →<sup>(placedIn)</sup> Corridor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#16-room-placedin-corridor)
+
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
@@ -75,6 +75,14 @@ In our hospital, _Rooms_ are placed in a mirror arrangement. The following figur
   <img src="https://github.com/user-attachments/assets/16eb6b19-7b24-4215-b8f9-ebba665f6176" alt="Schematic representation of a four contiguous Rooms">
 </p>
 
-a
+The mean of the distances between the door of two _Rooms_ is:
+- ((0.5 + 0.5 + 0.5) + (0.5 + 3.5 + 0.5)) / 2 = ((1.5) + (4.5)) / 2 = 6/2 = **3** metres        _(This is the width of a Room)_
 
+
+### 1.5. Room →<sup>(opposite)</sup> Room
+In our hospitals, between two opposing _Rooms_, there is a 2.5 metre-wide corridor so that two beds can pass through with some clearance. So the weight of this edge will be **2.5** metres.
+
+
+### 1.6. Room →<sup>(placedIn)</sup> Corridor
+The distance between any two _Rooms_ located in the same _Corridor_ is based on the mean of the maximum number of adjacent _Rooms_ that can be in a _Corridor_.
 
