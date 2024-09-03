@@ -24,9 +24,9 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 
 ## 1. Edges
 
-- [1.1. Bed →<sup>(nextTo)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths/main/README.md#11-bed-nextto-bed)
-- [1.2. Bed →<sup>(opposite)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths/main/README.md#12-bed-opposite-bed)
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths/main/README.md#1-bed-placedin-room)
+- [1.1. Bed →<sup>(nextTo)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#11-bed-nextto-bed)
+- [1.2. Bed →<sup>(opposite)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#12-bed-opposite-bed)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 
 ### 1.1. Bed →<sup>(nextTo)</sup> Bed
 Two _Beds_ that are next to each other in the same _Room_ will have a separation of 1 metre. We will add two times half the width of a bed to this distance. That's because we assume that both patients are not on the nearest edges of each bed; they would be in the centre of the bed. This extra distance is also useful for rooms with more than two adjacent beds to avoid getting distances that are too small.
