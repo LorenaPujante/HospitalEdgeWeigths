@@ -125,6 +125,6 @@ However:
 
 
 ### 1.8. Corridor →<sup>(placedIn)</sup> Area
-
+Our hospital layouts have no _Areas_ with _Corridors_ that are not neighbours to any other _Corridor_ of the _Area_.
 
 
