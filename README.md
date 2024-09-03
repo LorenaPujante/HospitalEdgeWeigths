@@ -5,7 +5,10 @@ To be more specific, the spatial edges are those from a more recent version of t
 
 Here, we present a figure with the spatial dimension of the KG where each type of edge has its weight (in navy blue). 
 
-![Spatial dimension of the KG where edges have their weight](https://github.com/user-attachments/assets/ac00ccbf-f243-482d-9695-dbccee1ad79e)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51c9ed2d-5b85-4a4a-bd9f-4da20275d298" alt="Spatial dimension of the KG where edges have their weight">
+</p>
+
 
 ## 0. Basis
 As the basis of the process to calculate the generic weight of each type of edge, we have the following facts:
