@@ -30,8 +30,8 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 - [1.4. Room →<sup>(nextTo)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#14-room-nextto-room)
 - [1.5. Room →<sup>(opposite)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#15-room-opposite-room)
 - [1.6. Room →<sup>(placedIn)</sup> Corridor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#16-room-placedin-corridor)
-
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.7. Corridor →<sup>(nextTo)</sup> Corridor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#17-corridor-nextto-corridor)
+  
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
@@ -85,4 +85,26 @@ In our hospitals, between two opposing _Rooms_, there is a 2.5 metre-wide corrid
 
 ### 1.6. Room →<sup>(placedIn)</sup> Corridor
 The distance between any two _Rooms_ located in the same _Corridor_ is based on the mean of the maximum number of adjacent _Rooms_ that can be in a _Corridor_.
+
+To get this number of _Corridors_, we have executed several times our generator of random hospital layouts, [HospitalGeneratorRDF](https://github.com/LorenaPujante/HospitalGeneratorRDF), with the params used in [~~doi: TODO~~](NULL). After each execution, we have counted how many _Areas_ have each _area layout_ so we can know how many _Corridors_ will be and how many adjacent _Rooms_ are in each _Corridor_. The following table represents the results:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c2aa0acd-2861-4e7f-a4ad-d9d195c21aef" alt="Table 1">
+</p>
+
+Weighted mean:
+- (3×10 + 6×40 + 9×15 + 12×15 + 15×20)/100 = 885/100 = 8.85 ≈ _9_ metres
+
+However, this weight represents the distance of the path `Room →(placedIn) Corridor ←(placedIn) Room`, so the weight of `Room →(placedIn) Corridor` should be:
+- 2α = 9  `→`  α = 9/2 = 4.5  `→` _Room →(placedIn) Corridor_ = **4.5** metres
+
+Since the mean distance between two _Rooms_ in a _Corridor_ is 9 metres, there will be adjacent _Rooms_ that are nearer. When executing the shortest path algorithm in these cases, the result will be a concatenation of _nextTo_ edges. For example:
+- `Room →(nextTo) Room →(nextTo) Room`: 3 + 3 = **6** metres
+- `Room →(nextTo) Room →(nextTo) Room →(nextTo) Room`: 3 + 3 + 3 = **9** metres
+
+### 1.7. Corridor →<sup>(nextTo)</sup> Corridor
+
+
+
+
 
