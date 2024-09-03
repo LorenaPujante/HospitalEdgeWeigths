@@ -34,8 +34,8 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 - [1.5. Room →<sup>(opposite)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#15-room-opposite-room)
 - [1.6. Room →<sup>(placedIn)</sup> Corridor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#16-room-placedin-corridor)
 - [1.7. Corridor →<sup>(nextTo)</sup> Corridor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#17-corridor-nextto-corridor)
-  
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.8. Corridor →<sup>(placedIn)</sup> Area](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#18-corridor-placedin-area)
+
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
@@ -78,12 +78,13 @@ In our hospital, _Rooms_ are placed in a mirror arrangement. The following figur
   <img src="https://github.com/user-attachments/assets/16eb6b19-7b24-4215-b8f9-ebba665f6176" alt="Schematic representation of a four contiguous Rooms">
 </p>
 
-The mean of the distances between the door of two _Rooms_ is:
-- ((0.5 + 0.5 + 0.5) + (0.5 + 3.5 + 0.5)) / 2 = ((1.5) + (4.5)) / 2 = 6/2 = **3** metres        _(This is the width of a Room)_
-
+The mean of the distances between the doors of two _Rooms_ is:
+<p align="center">
+  ((0.5 + 0.5 + 0.5) + (0.5 + 3.5 + 0.5)) / 2 = ((1.5) + (4.5)) / 2 = 6/2 = <b>3</b> metres &emsp; <em>(This is the width of a Room)</em>
+</p>
 
 ### 1.5. Room →<sup>(opposite)</sup> Room
-In our hospitals, between two opposing _Rooms_, there is a 2.5 metre-wide corridor so that two beds can pass through with some clearance. So the weight of this edge will be **2.5** metres.
+In our hospitals, between two opposing _Rooms_, there is a 2.5 metre-wide corridor so that two beds can pass through with some clearance. So, the weight of this edge will be **2.5** metres.
 
 
 ### 1.6. Room →<sup>(placedIn)</sup> Corridor
@@ -96,18 +97,34 @@ To get this number of _Corridors_, we have executed several times our generator 
 </p>
 
 Weighted mean:
-- (3×10 + 6×40 + 9×15 + 12×15 + 15×20)/100 = 885/100 = 8.85 ≈ _9_ metres
+<p align="center">
+  (3×10 + 6×40 + 9×15 + 12×15 + 15×20)/100 = 885/100 = 8.85 ≈ <b>9</b> metres
+</p>
 
 However, this weight represents the distance of the path `Room →(placedIn) Corridor ←(placedIn) Room`, so the weight of `Room →(placedIn) Corridor` should be:
-- 2α = 9  `→`  α = 9/2 = 4.5  `→` _Room →(placedIn) Corridor_ = **4.5** metres
+<p align="center">
+  2<em>α</em>= 9 &ensp; → &ensp; <em>α</em> = 9/2 = 4.5 &ensp; → &ensp; <em>Room →<sup>(placedIn)</sup> Corridor</em> = <b>4.5</b> metres
+</p>
 
 Since the mean distance between two _Rooms_ in a _Corridor_ is 9 metres, there will be adjacent _Rooms_ that are nearer. When executing the shortest path algorithm in these cases, the result will be a concatenation of _nextTo_ edges. For example:
 - `Room →(nextTo) Room →(nextTo) Room`: 3 + 3 = **6** metres
 - `Room →(nextTo) Room →(nextTo) Room →(nextTo) Room`: 3 + 3 + 3 = **9** metres
 
+
 ### 1.7. Corridor →<sup>(nextTo)</sup> Corridor
+If the mean distance between two _Rooms_ in the same _Corridor_, the mean distance between two _Rooms_ in two neighbouring _Corridors_ would be double. That is:
+<p align="center">
+  9×2 = <b>18</b> metres
+</p>
+
+However:
+<p align="center">
+  18 = <code>Room → Corridor →<sup>(nextTo)</sup> Corridor ← Room</code> = 4.5 + <em>α</em> + 4.5 &ensp; → &ensp; 9 + <em>α</em> = 18 &ensp; → &ensp; <em>α</em> = 9 <br>
+  <code>Corridor →<sup>(nextTo)</sup> Corridor</code> = <b>9</b> metres
+</p>
 
 
+### 1.8. Corridor →<sup>(placedIn)</sup> Area
 
 
 
