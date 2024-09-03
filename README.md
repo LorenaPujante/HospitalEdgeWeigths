@@ -18,7 +18,7 @@ As the basis of the process to calculate the generic weight of each type of edge
 A schematic representation of a general _Room_ for hospitalisations can be seen in the following figure. The dimensions are in metres. All the _Rooms_ on the upper floor will have this layout.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6fb6e8cd-bbb5-4c8c-aa1d-cd8e8d0a12fb" alt="Schematic representation of a Room">
+  <img src="https://github.com/user-attachments/assets/40b0651c-30c6-480f-a0b2-bc8782ee9140" alt="Schematic representation of a Room">
 </p>
 
 
@@ -27,16 +27,32 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 - [1.1. Bed →<sup>(nextTo)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#11-bed-nextto-bed)
 - [1.2. Bed →<sup>(opposite)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#12-bed-opposite-bed)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.4. Room →<sup>(nextTo)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#14-room-nextto-room)
+- 
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+
 
 ### 1.1. Bed →<sup>(nextTo)</sup> Bed
 Two _Beds_ that are next to each other in the same _Room_ will have a separation of 1 metre. We will add two times half the width of a bed to this distance. That's because we assume that both patients are not on the nearest edges of each bed; they would be in the centre of the bed. This extra distance is also useful for rooms with more than two adjacent beds to avoid getting distances that are too small.
 
 So the total distance will be: _1 + 2×0.5_ = **2** metres. 
 
+
 ### 1.2. Bed →<sup>(opposite)</sup> Bed
 In our hospital layout, there won't be general _Rooms_ with more than two _Beds_ or where the _Beds_ are opposite. However, if there would be a _Room_ with a _Bed_ opposite another _Bed_, there would be a 1.5 metre-wide corridor between them. Similarly to the distance between two adjacent _Beds_, we will add a small distance to this separation.
 
 So the total distance will be: _1.5 + 1_ = **2.5** metres.
+
 
 ### 1.3. Bed →<sup>(placedIn)</sup> Room
 We will consider this weight as the distance you must traverse to get to a _Bed_ from the _Room_ door. That is the distance from the door to the end of the bed.
@@ -52,6 +68,13 @@ However, we assume that there won't be _Rooms_ with a layout different from the 
 - `Bed →(opposite) Bed →(nextTo) Bed`: 2 + 2.5 = **4.5** metres
 
 
+### 1.4. Room →<sup>(nextTo)</sup> Room
+In our hospital, _Rooms_ are placed in a mirror arrangement. The following figure represents four contiguous _Rooms_ with the distance between them in metres.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/16eb6b19-7b24-4215-b8f9-ebba665f6176" alt="Schematic representation of a four contiguous Rooms">
+</p>
+
+a
 
 
