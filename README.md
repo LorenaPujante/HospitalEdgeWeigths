@@ -3,7 +3,7 @@ In this repository, we show and explain which are the weights for the edges of t
 
 To be more specific, the spatial edges are those from a more recent version of the KG that can be found in the following repository: [LorenaPujante/HospitalKG_Changes](https://github.com/LorenaPujante/HospitalKG_Changes).
 
-Here, we present a figure with the spatial dimension of the KG where each type of edge has its weight.
+Here, we present a figure with the spatial dimension of the KG where each type of edge has its weight (in navy blue). 
 
-![Spatial dimension of the KG where edges have their weight](https://github.com/user-attachments/assets/eab0c6b4-0aca-47f4-b019-258880f9d3aa)
+![Spatial dimension of the KG where edges have their weight](https://github.com/user-attachments/assets/ac00ccbf-f243-482d-9695-dbccee1ad79e)
 
