@@ -15,7 +15,7 @@ As the basis of the process to calculate the generic weight of each type of edge
   - The size of a general _Room_ for hospitalisations is: 3×6.5 metres
 - To measure the distance between the _Locations_, we have only used the _General Rooms_. These _Rooms_ are on the upper floors of the hospital. The ground floor (where the emergency rooms, ICU rooms, operating theatres and X-ray rooms are located) will not be taken into account. This is because the layout and size of the rooms on the ground floor are different from those on the other floors.
 
-A schematic representation of a general _Room_ for hospitalisations can be seen in the following figure. The dimensions are in metres.
+A schematic representation of a general _Room_ for hospitalisations can be seen in the following figure. The dimensions are in metres. All the _Rooms_ on the upper floor will have this layout.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6fb6e8cd-bbb5-4c8c-aa1d-cd8e8d0a12fb" alt="Schematic representation of a Room">
@@ -24,10 +24,34 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 
 ## 1. Edges
 
-### 1.1. Bed →<sup>(nextTo)</sup> Bed
+- [1.1. Bed →<sup>(nextTo)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths/edit/main/README.md#11-bed-nextto-bed)
+- [1.2. Bed →<sup>(opposite)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths/edit/main/README.md#12-bed-opposite-bed)
+- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths/edit/main/README.md#1-bed-placedin-room)
 
+### 1.1. Bed →<sup>(nextTo)</sup> Bed
+Two _Beds_ that are next to each other in the same _Room_ will have a separation of 1 metre. We will add two times half the width of a bed to this distance. That's because we assume that both patients are not on the nearest edges of each bed; they would be in the centre of the bed. This extra distance is also useful for rooms with more than two adjacent beds to avoid getting distances that are too small.
+
+So the total distance will be: _1 + 2×0.5_ = **2** metres. 
 
 ### 1.2. Bed →<sup>(opposite)</sup> Bed
+In our hospital layout, there won't be general _Rooms_ with more than two _Beds_ or where the _Beds_ are opposite. However, if there would be a _Room_ with a _Bed_ opposite another _Bed_, there would be a 1.5 metre-wide corridor between them. Similarly to the distance between two adjacent _Beds_, we will add a small distance to this separation.
 
+So the total distance will be: _1.5 + 1_ = **2.5** metres.
 
 ### 1.3. Bed →<sup>(placedIn)</sup> Room
+We will consider this weight as the distance you must traverse to get to a _Bed_ from the _Room_ door. That is the distance from the door to the end of the bed.
+- _Bed_1_: 1.5 + 1 = 2.5 metres
+- _Bed_2_: 1.5 + 1×3 = 4.5 metres
+- _Mean of the distances_: (2.5 + 4.5)/2 = 7/2 = **3.5** metres
+
+This distance might not correctly represent the fact of having two _Beds_ that are in the same _Room_ but that are neither adjacent nor opposite each other.
+- `Bed →(placedIn) Room ←(placedIn) Bed`: 35 + 3.5 = **7.5**
+
+However, we assume that there won't be _Rooms_ with a layout different from the showed previously. In addition, if there were another kind of _Room_ layout, the distance between _Beds_ could be represented by traversing several _nextTo_ and _opposite_ edges. For example:
+- `Bed →(nextTo) Bed →(nextTo) Bed`: 2 + 2 = **4** metres
+- `Bed →(opposite) Bed →(nextTo) Bed`: 2 + 2.5 = **4.5** metres
+
+
+
+
+
