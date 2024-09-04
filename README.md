@@ -8,8 +8,14 @@ In addition, the calculation of the weights is also influenced by the process of
 Here, we present a figure with the spatial dimension of the KG where each type of edge has its weight (in navy blue). 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/51c9ed2d-5b85-4a4a-bd9f-4da20275d298" alt="Spatial dimension of the KG where edges have their weight">
+  <img src="https://github.com/user-attachments/assets/a2ab0058-5b99-4d35-b740-73060ebaa534" alt="Spatial dimension of the KG where edges have their weight">
 </p>
+
+- [0. Basis](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#0-basis)
+- [1. Edges](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#1-edges)
+- [2. Logic Distance](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#2-logiczone)
+- [3. Clarifications](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#3-clarifications)
+
 
 
 ## 0. Basis
@@ -27,6 +33,7 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 </p>
 
 
+
 ## 1. Edges
 
 - [1.1. Bed →<sup>(nextTo)</sup> Bed](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#11-bed-nextto-bed)
@@ -41,10 +48,6 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 - [1.10. Area →<sup>(placedIn)</sup> Floor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#110-area-placedin-floor)
 - [1.11. Floor →<sup>(placedIn)</sup> Building](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#111-floor-placedin-building)
 - [1.12. LogicZone →<sup>(hasArea)</sup> Area](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#112-logiczone-hasarea-area)
-
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 
 
 ### 1.1. Bed →<sup>(nextTo)</sup> Bed
@@ -206,3 +209,19 @@ We want the distance between two _Areas_ in the same _LogicZone_ to be significa
   <em>α</em> = 39/2 = 19.5 <br>
   <code>LogicZone →<sup>(hasArea)</sup> Area</code> = 15/2 = <b>7.5</b> metres
 </p>
+
+
+
+## 2. Logic Distance
+We want a significant difference between two _Patients_ that have been cared for by the same _Service_ or _Hospitalization unit_ and two _Patients_ that didn't share healthcare workers (HCW). 
+
+So when two _Patients_ shared the same group of HCW while they were in the _Locations_ to compare, the distance between those _Locations_ will be reduced:
+ - Service: &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; → &ensp;&ensp; Distance = Spatial_Distance **× 0.7**
+ - Hospitalization Unit: &ensp;&ensp;&ensp;&ensp;&emsp; → &ensp;&ensp; Distance = Spatial_Distance **× 0.5**
+
+
+
+## 3. Clarifications
+a
+
+
