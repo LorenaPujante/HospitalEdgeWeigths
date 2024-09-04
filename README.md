@@ -38,8 +38,8 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 - [1.7. Corridor →<sup>(nextTo)</sup> Corridor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#17-corridor-nextto-corridor)
 - [1.8. Corridor →<sup>(placedIn)</sup> Area](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#18-corridor-placedin-area)
 - [1.9. Area →<sup>(nextTo)</sup> Area](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#19-area-nextto-area)
-  
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
+- [1.10. Area →<sup>(placedIn)</sup> Floor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#110-area-placedin-floor)
+
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
@@ -149,4 +149,17 @@ The distance between two adjacent _Areas_ will be the average minimum _number of
 
 To calculate the distance between adjacent areas, we will only take into consideration the corridors of the areas painted in pink in the figure.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4282e0fa-d2b4-49dd-8519-4619f2df52ef" alt="Table 2">
+</p>
+
+The final result, in fact, represents the weight of this path:
+<p align="center">
+  22.5 = <code>Corridor → Area →<sup>(nextTo)</sup> Area ← Corridor</code> = 4.5 + <em>α</em> + 4.5 &ensp; → &ensp; <em>α</em> = 22.5-9 &ensp; → &ensp; <em>α</em> = 13.5 &ensp; → &ensp; <em>α</em> = 4.5 <br>
+  <code>Area →<sup>(nextTo)</sup> Area</code> = <b>13.5</b> metres
+</p>
+
+
+### 1.10. Area →<sup>(placedIn)</sup> Floor
+a
 
