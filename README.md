@@ -196,4 +196,13 @@ We can calculte this distance in this way:
 
 
 ### 1.12. LogicZone →<sup>(hasArea)</sup> Area
-a
+We want the distance between two _Areas_ in the same _LogicZone_ to be significantly lower than between two _Areas_ from the same _Floor_. So we will divide the weight of _Area →<sup>(placedIn)</sup> Floor_ edge by two.
+
+<p align="center">
+  (<code>Corridor → Area → Floor ← Area ← Corridor</code>)×2 = 39×2  <br>
+  <code>Corridor → Area → Floor → Building ← Floor ← Area ← Corridor</code> = 78 <br>
+  4.5 + 15 + 2<em>α</em> + 15 + 4.5 = 78 <br>
+  2<em>α</em> = 78 - 39 = 39 <br>
+  <em>α</em> = 39/2 = 19.5 <br>
+  <code>LogicZone →<sup>(hasArea)</sup> Area</code> = 15/2 = <b>7.5</b> metres
+</p>
