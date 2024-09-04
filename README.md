@@ -39,9 +39,9 @@ A schematic representation of a general _Room_ for hospitalisations can be seen 
 - [1.8. Corridor →<sup>(placedIn)</sup> Area](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#18-corridor-placedin-area)
 - [1.9. Area →<sup>(nextTo)</sup> Area](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#19-area-nextto-area)
 - [1.10. Area →<sup>(placedIn)</sup> Floor](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#110-area-placedin-floor)
+- [1.11. Floor →<sup>(placedIn)</sup> Building](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#111-floor-placedin-building)
+- [1.12. LogicZone →<sup>(hasArea)</sup> Area](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#112-logiczone-hasarea-area)
 
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
-- [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
 - [1.3. Bed →<sup>(placedIn)</sup> Room](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#13-bed-placedin-room)
@@ -166,14 +166,34 @@ The weight between two non-adjacent _Areas_ is calculated similarly to those _Ar
 As in the previous section, we will use as a basis the figure with the seven cases based on the 4×2 _Floor_ layout.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5d98cbc6-4536-423f-b7ac-ea04a3f6313c" alt="Table 3">
+  <img src="https://github.com/user-attachments/assets/91be1626-05b1-4e9a-a79f-901d86c89148" alt="Table 3">
 </p>
 
 The final result, in fact, represents the weight of this path:
 <p align="center">
-  39 = <code>Corridor → Area →<sup>(nextTo)</sup> Area ← Corridor</code> = 4.5 + <em>α</em> + 4.5 &ensp; → &ensp; <em>α</em> = 22.5-9 &ensp; → &ensp; <em>α</em> = 13.5 &ensp; → &ensp; <em>α</em> = 4.5 <br>
-  <code>Area →<sup>(nextTo)</sup> Area</code> = <b>13.5</b> metres
+  39 = <code>Corridor → Area → Floor ← Area ← Corridor</code> = 4.5 + 2<em>α</em> + 4.5 &ensp; → &ensp; 2<em>α</em> = 39-9 &ensp; → &ensp; <em>α</em> = 30/2 &ensp; → &ensp; <em>α</em> = 15 <br>
+  <code>Area →<sup>(placedIn)</sup> Floor</code> = <b>15</b> metres
+</p>
 
 
+### 1.11. Floor →<sup>(placedIn)</sup> Building
+Going from a _Floor_ to any other _Floor_ of the same building is the same as the path showed in the next figure with the purple arrows. That is, traversing the _origin Floor_ and then traversing the _destination Floor_, what can be traslated to going from a _Corridor_ in one _Floor_ to a _Corridor_ of the other _Floor_.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/06a025a3-1ceb-4540-9e01-cabb6e17fa73" alt="Schematic representation of the path to go from a Floor to any other Floor">
+</p>
+
+We can calculte this distance in this way:
+
+<p align="center">
+  (<code>Corridor → Area → Floor ← Area ← Corridor</code>)×2 = 39×2  <br>
+  <code>Corridor → Area → Floor → Building ← Floor ← Area ← Corridor</code> = 78 <br>
+  4.5 + 15 + 2<em>α</em> + 15 + 4.5 = 78 <br>
+  2<em>α</em> = 78 - 39 = 39 <br>
+  <em>α</em> = 39/2 = 19.5 <br>
+  <code>Floor →<sup>(placedIn)</sup> Building</code> = <b>19.5</b> metres
+</p>
 
 
+### 1.12. LogicZone →<sup>(hasArea)</sup> Area
+a
