@@ -139,6 +139,14 @@ However:
 
 
 ### 1.9. Area →<sup>(nextTo)</sup> Area
-Before explaining how we got the value for the weight of the _Area →<sup>(nextTo)</sup> Area_ edge, we will show a figure. In this figure, we can see a schematic representation of the layout of a _Floor_. This _Floor_ has 6 _Areas_ organised in 2 rows and 4 columns. In our [random hospital generator](https://github.com/LorenaPujante/HospitalGeneratorRDF) ~~[TODO: CAMBIAR ENLACE AL NUEVO]~~, the _Area_ layout with the maximum number of _Corridors_ has 4 _Corridors_ arranged in a cross. The _Areas_ in the image follow this layout. _Corridors_ are painted in different colours according to the minimum number of _Corridors_ we have to traverse from the _origin corridor_ (it has a wider line in red) to each _Corridor_ (we will call this number of corridors as _number of steps_). The figure shows the different cases that we can find, depending on which is the origin corridor; the rest of the possible positions would coincide with any of those shown.  
+Before explaining how we got the value for the weight of the _Area →<sup>(nextTo)</sup> Area_ edge, we will show a figure. In this figure, we can see a schematic representation of the layout of a _Floor_. This _Floor_ has 6 _Areas_ organised in 2 rows and 4 columns. In our [random hospital generator](https://github.com/LorenaPujante/HospitalGeneratorRDF) ~~[TODO: CAMBIAR ENLACE AL NUEVO]~~, the _Area_ layout with the maximum number of _Corridors_ has 4 _Corridors_ arranged in a cross. The _Areas_ in the image follow this layout. _Corridors_ are painted in different colours according to the minimum number of _Corridors_ we have to traverse from the _origin corridor_ (it has a wider line in red) to each _Corridor_ (we will call this number of corridors as _number of jumps_). The figure shows the different cases that we can find, depending on which is the origin corridor; the rest of the possible positions would coincide with any of those shown.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/58bd853b-8f01-426e-89ea-cfe0c0327b23" alt="Corridors and Areas layout">
+</p>
+
+The distance between two adjacent _Areas_ will be the average minimum _number of jumps_ between a _Corridor_ of one _Area_ and a _Corridor_ from another _Area_. So, this distance entirely depends on the layout of the _Floor_. In our case, the upper _Floors_ of the hospital will have a layout with 2 rows and 4 columns, as in the previous figure. The number and disposition of the _Corridors_ per _Area_ may slightly change, but we will calculate the distance assuming the maximum number of _Corridors_ in each _Area_.
+
+To calculate the distance between adjacent areas, we will only take into consideration the corridors of the areas painted in pink in the figure.
 
 
