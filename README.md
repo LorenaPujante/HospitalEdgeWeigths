@@ -227,7 +227,15 @@ So when two _Patients_ shared the same group of HCW while they were in the _Loca
 - Although the weight values ​​may seem high, it should be noted that we will use a shortest path algorithm to calculate the distance between any two _Beds_. This algorithm searches for the path with the lowest cost, so it can find "shortcuts" by traversing several _nextTo/opposite_ edges instead of _placedIn_ edges (the most costly) when the _Beds_ are placed in _Rooms_ that are closer than the average distance for the _Corridor_, _Area_ or _Floor_.<br>
 The following figure shows a section of a _Floor_, specifically 4 _Areas_, on which several paths have been defined between its _Beds_. <br>
 This schematic representation of a section of _Floor 1_ with its areas _0A_, _1A_, _2A_ and _0B_ shows the _Corridors_ and _Rooms_ of each Area and their ID. The _Rooms_ shaded in light red have a bed used as the origin or destination of one path. A small brown rectangle has been placed in some of the _Rooms_. This rectangle symbolizes the door of the _Room_ to indicate which _Corridor_ the _Room_ leads to. The rooms that face the same _Corridor_ will be neighbours, and those that do not will not be. <br>
-The paths can be seen in the following table, where the total cost of the chosen path for every pair of _Beds_ (_Cost_ column) appears in black or indigo depending on whether it is an ordinary path (such as the proposed in this README for beds placed in the same _Room_/_Corridor_/_Area_/_Floor_/_Building_) or whether a “shortcut” with a concatenation of _nextTo_/_opposite_ edges.<br>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bfbbbd8b-f259-412c-85ae-c30ba47e262c" alt="Schematic representation of a section of a Floor with 4 Areas">
+</p>
+
+The paths can be seen in the following table, where the total cost of the chosen path for every pair of _Beds_ (_Cost_ column) appears in black or indigo depending on whether it is an ordinary path (such as the proposed in this README for beds placed in the same _Room_, _Corridor_, _Area_, _Floor_ or _Building_) or whether a “shortcut” with a concatenation of _nextTo_/_opposite_ edges.<br>
 These shortcuts have a total distance around half the cost of the ordinary route.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fa2873d3-46d6-4c7a-993b-2c42177bca67" alt="Table 4">
+</p>
 
