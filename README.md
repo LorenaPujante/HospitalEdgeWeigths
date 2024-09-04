@@ -161,5 +161,19 @@ The final result, in fact, represents the weight of this path:
 
 
 ### 1.10. Area →<sup>(placedIn)</sup> Floor
-a
+The weight between two non-adjacent _Areas_ is calculated similarly to those _Areas_ which are adjacent, that is, based on the number of _Corridors_. In this case, we will consider all the _Corridors_ of the _Floor_ except those from the origin _Area_. 
+
+As in the previous section, we will use as a basis the figure with the seven cases based on the 4×2 _Floor_ layout.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5d98cbc6-4536-423f-b7ac-ea04a3f6313c" alt="Table 3">
+</p>
+
+The final result, in fact, represents the weight of this path:
+<p align="center">
+  39 = <code>Corridor → Area →<sup>(nextTo)</sup> Area ← Corridor</code> = 4.5 + <em>α</em> + 4.5 &ensp; → &ensp; <em>α</em> = 22.5-9 &ensp; → &ensp; <em>α</em> = 13.5 &ensp; → &ensp; <em>α</em> = 4.5 <br>
+  <code>Area →<sup>(nextTo)</sup> Area</code> = <b>13.5</b> metres
+
+
+
 
