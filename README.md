@@ -12,14 +12,20 @@ Here, we present a figure with the spatial dimension of the KG where each type o
 </p>
 
 
-- [0. Basis](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#0-basis)
+- [0.B. Basis](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#0b-basis)
 - [1. Edges](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#1-edges)
 - [2. Logic Distance](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#2-logiczone)
 - [3. Clarifications](https://github.com/LorenaPujante/HospitalEdgeWeigths?tab=readme-ov-file#3-clarifications)
 
 
+## 0.A. Related Repositories
+Below, we present some other related repositories that may be of interest to you:
+- [**HospitalKG_changes**](https://github.com/LorenaPujante/HospitalKG_Changes): It is also linked to [~~doi: TODO~~](NULL).
+- [**HospitalGeneratorRDF_V2**](https://github.com/LorenaPujante/HospitalGeneratorRDF_V2): It is also linked to [~~doi: TODO~~](NULL).
 
-## 0. Basis
+
+  
+## 0.B. Basis
 As the basis of the process to calculate the generic weight of each type of edge, we have the following facts:
 - The weight of the edges represents **metres**.
 - We start with the following measurements:
