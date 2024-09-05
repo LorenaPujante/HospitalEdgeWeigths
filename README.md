@@ -3,7 +3,7 @@ In this repository, we show and explain which are the weights for the edges of t
 
 To be more specific, the spatial edges are those from a more recent version of the KG that can be found in the following repository: [LorenaPujante/HospitalKG_Changes](https://github.com/LorenaPujante/HospitalKG_Changes). 
 
-In addition, the calculation of the weights is also influenced by the process of our [random hospital generator](https://github.com/LorenaPujante/HospitalGeneratorRDF) ~~[TODO: CAMBIAR ENLACE AL NUEVO]~~ to create the hospital and _Floor_ layouts. The values of the weights are based on the hospital layout, so it is important to consider the hospital generator's principles (creation and organization rules, limitations).   
+In addition, the calculation of the weights is also influenced by the process of our [random hospital generator](https://github.com/LorenaPujante/HospitalGeneratorRDF_V2) to create the hospital and _Floor_ layouts. The values of the weights are based on the hospital layout, so it is important to consider the hospital generator's principles (creation and organization rules, limitations).   
 
 Here, we present a figure with the spatial dimension of the KG where each type of edge has its weight (in navy blue). 
 
@@ -96,7 +96,7 @@ In our hospitals, between two opposing _Rooms_, there is a 2.5 metre-wide corrid
 ### 1.6. Room →<sup>(placedIn)</sup> Corridor
 The distance between any two _Rooms_ located in the same _Corridor_ is based on the Weighted average of the maximum number of adjacent _Rooms_ that can be in a _Corridor_.
 
-To get this number of _Corridors_, we have executed several times our generator of random hospital layouts, [HospitalGeneratorRDF](https://github.com/LorenaPujante/HospitalGeneratorRDF), with the params used in [~~doi: TODO~~](NULL). After each execution, we have counted how many _Areas_ have each _area layout_ so we can know how many _Corridors_ will be and how many adjacent _Rooms_ are in each _Corridor_. The following table represents the results:
+To get this number of _Corridors_, we have executed several times our generator of random hospital layouts, [HospitalGeneratorRDF_V2](https://github.com/LorenaPujante/HospitalGeneratorRDF_V2), with the params used in [~~doi: TODO~~](NULL). After each execution, we have counted how many _Areas_ have each _area layout_ so we can know how many _Corridors_ will be and how many adjacent _Rooms_ are in each _Corridor_. The following table represents the results:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c2aa0acd-2861-4e7f-a4ad-d9d195c21aef" alt="Table 1">
