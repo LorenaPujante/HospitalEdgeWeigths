@@ -20,6 +20,7 @@ Here, we present a figure with the spatial dimension of the KG where each type o
 
 ## 0.A. Related Repositories
 Below, we present some other related repositories that may be of interest to you:
+- [**STeMECH**](https://github.com/LorenaPujante/STeMECH): Code for [~~doi: TODO~~](NULL).
 - [**HospitalKG_changes**](https://github.com/LorenaPujante/HospitalKG_Changes): It is also linked to [~~doi: TODO~~](NULL).
 - [**HospitalGeneratorRDF_V2**](https://github.com/LorenaPujante/HospitalGeneratorRDF_V2): It is also linked to [~~doi: TODO~~](NULL).
 
